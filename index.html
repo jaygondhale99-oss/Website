@@ -164,7 +164,19 @@ font-size:24px;
 animation:fall 3s linear forwards;
 pointer-events:none;
 }
+button, .btn, .menu {
+outline: none;
+-webkit-tap-highlight-color: transparent;
+}
 
+button:focus, .btn:focus, .menu:focus {
+outline: none;
+box-shadow: none;
+}
+  button, .btn, .menu {
+user-select: none;
+  }
+  
 @keyframes fall{
 to{transform:translateY(100vh);opacity:0}
 }
