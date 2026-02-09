@@ -3,59 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celebrating Jay & Swara's Friendship</title>
+    <title>Celebrating Jay and Swara's Friendship</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f0e68c; color: #333; text-align: center; }
-        h1 { color: #ff69b4; }
-        .emoji { font-size: 50px; }
-        footer { position: fixed; bottom: 10px; width: 100%; }
+        body { margin: 0; font-family: Arial, sans-serif; overflow: hidden; }
+        .section { padding: 50px; text-align: center; }
+        .hero { background: linear-gradient(to right, #ff7e5f, #feb47b); position: relative; }
+        .late-night { background: linear-gradient(to right, #6a11cb, #2575fc); }
+        .canvas { background: linear-gradient(to right, #ff5f6d, #ffc371); }
+        .memories { background: linear-gradient(to right, #00c6ff, #0072ff); }
+        .love-message { background: linear-gradient(to right, #f2709c, #ff9472); }
+        @keyframes rain {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+        .emoji-rain { position: absolute; width: 100%; height: 100%; pointer-events: none; }
+        .emoji { position: absolute; font-size: 24px; animation: rain linear infinite; }
+        .confetti {
+            width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: hidden;
+        }
     </style>
 </head>
 <body>
-    <h1>🎉 Celebrating Jay & Swara's 2-Year Friendship! 🎉</h1>
-    <p>🍀 Happy Anniversary, Jay and Swara! 🍀</p>
-    <p>In the past 2 years, we’ve shared:</p>
-    <ul>
-        <li>🌙 Late night talks</li>
-        <li>📸 Captured memories</li>
-        <li>❤️ A journey filled with love and happiness</li>
-    </ul>
-    <h2>Our Cute Moments</h2>
-    <p>Here are some doodles to remember our cute moments together:</p>
-    <div>
-        <canvas id="doodleCanvas" width="500" height="300" style="border:1px solid #000000;"></canvas>
-        <button onclick="startDrawing()">Draw with me!</button>
+    <div class="hero section">
+        <div class="emoji-rain">
+            <div class="emoji" style="animation-duration: 1s; left: 10%;"></div>
+            <div class="emoji" style="animation-duration: 1.5s; left: 30%;"></div>
+            <div class="emoji" style="animation-duration: 2s; left: 50%;"></div>
+        </div>
+        <h1>🎉 Celebrating 2 Years of Friendship! 🎉</h1>
     </div>
 
-    <h2>Our Past Fight Story</h2>
-    <p>हर रिश्ते में झगड़े होते हैं, लेकिन यही हमें मजबूत बनाता है।  
-    One time, we had a major disagreement over whose choice of movie to watch! 😅  
-    But we made up with ice-cream and laughter. 🍦</p>
+    <div class="late-night section">
+        <h2>Late Night Talks</h2>
+        <p>हमारी गहरी रातें और बातें हमेशा याद रहेंगी।</p>
+    </div>
 
-    <script>
-        let canvas = document.getElementById('doodleCanvas');
-        let ctx = canvas.getContext('2d');
-        let drawing = false;
-
-        function startDrawing() {
-            drawing = true;
-            ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
-        }
-
-        canvas.addEventListener('mousemove', (event) => {
-            if(drawing){
-                ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+    <div class="canvas section">
+        <h2>Doodle Canvas</h2>
+        <p>आओ मिलकर कुछ डूडल बनाएं!</p>
+        <canvas id="doodleCanvas" width="300" height="300"></canvas>
+        <script>
+            const canvas = document.getElementById('doodleCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.addEventListener('mousemove', (e) => {
+                if (e.buttons !== 1) return; // Only draw when mouse is pressed
+                ctx.lineWidth = 5;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = 'black';
+                ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
                 ctx.stroke();
-            }
-        });
+                ctx.beginPath();
+                ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+            });
+        </script>
+    </div>
 
-        canvas.addEventListener('mouseup', () => { drawing = false; });
-        canvas.addEventListener('mouseout', () => { drawing = false; });
+    <div class="memories section">
+        <h2>Memories Grid</h2>
+        <p>Press the button to relive our best memories.</p>
+        <button onclick="alert('Memories relived!')">Click Me!</button>
+    </div>
+
+    <div class="section">
+        <h2>Our Big Fight</h2>
+        <p>हमारे बड़े झगड़े की कहानी और फिर अपसी सुलह।</p>
+    </div>
+
+    <div class="love-message section">
+        <h2>Final Love Message</h2>
+        <p>हर दिन तुम्हारा साथ होना खास है।</p>
+    </div>
+
+    <div class="confetti"></div>
+    <script>
+        // Confetti animation script here
     </script>
-
-    <footer>
-        <p>Thank you for sharing this beautiful journey with me! 💖</p>
-        <p>~ Jay & Swara ~</p>
-    </footer>
 </body>
 </html>
