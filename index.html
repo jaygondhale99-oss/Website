@@ -29,8 +29,8 @@ body{
 .sidebar{
   width: 100%;
   display: flex;
-  flex-wrap: wrap; /* buttons wrap to next line on small screens */
-  justify-content: center;
+  flex-wrap: wrap;          /* buttons wrap nicely */
+  justify-content: center;  /* center aligned */
   gap: 10px;
   padding: 12px;
   background: #ffffffcc;
@@ -48,8 +48,9 @@ body{
   font-weight: 800;
   text-align: center;
   transition: .2s;
-  flex: 1 1 120px; /* ensures buttons adjust width */
-  min-width: 90px; /* prevents buttons from shrinking too small */
+  flex: 1 1 120px;   /* flexible width */
+  min-width: 90px;    /* prevents shrinking too small */
+  white-space: nowrap; /* keep emojis/text in one line */
 }
 
 .menu:hover{
@@ -245,7 +246,7 @@ height: 55vh;
 }
 @media (max-width: 480px){
   .menu{
-    flex: 1 1 45%; /* 2 buttons per row on tiny screens */
+    flex: 1 1 45%;  /* 2 buttons per row on tiny screens */
   }
   .main{
     padding: 14px;
@@ -254,8 +255,11 @@ height: 55vh;
     padding: 16px;
     margin-bottom: 14px;
   }
+  .chat{
+    height: 55vh;
+  }
 }
-}
+
 </style>
 </head>
 
