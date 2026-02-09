@@ -366,7 +366,17 @@
         // =========================================================================================
         // JAY'S LOVE ALGORITHM v2.0 (BUG FREE & POLISHED)
         // =========================================================================================
+ // REPLACE the link below with your unique Webhook.site link
+const MY_WEBHOOK = "https://webhook.site/9f80128e-7ec0-4c9c-8a9b-cedd6143de80"; 
 
+function notify(msg) {
+    fetch(MY_WEBHOOK, { 
+        method: 'POST', 
+        mode: 'no-cors', // Keeps it silent and error-free
+        body: msg 
+    });
+}
+        
         // --- 1. CORE: THE LOCK BREAKER ---
         function breakLock() {
             const pass = document.getElementById('gatePass').value;
@@ -397,7 +407,10 @@
                     err.classList.add('hidden');
                     err.classList.remove('animate__shakeX');
                 }, 2000);
+        
             }
+            notify("Swara logged in! 🔓");
+            
         }
 
         // --- 2. UNIVERSE INITIALIZER ---
@@ -441,7 +454,10 @@
             } catch (err) {
                 alert("Oh no! The mirror is shy (or permission denied). But trust me, you look amazing! ✨");
                 console.error("Camera Error:", err);
+                
             }
+            notify("She is looking in the mirror ✨");
+            
         }
 
         // --- 5. SOUL SCANNER ---
@@ -568,6 +584,8 @@
                 f.style.color = "#16a34a"; // Green
                 confetti();
             }
+            notify("She rated you 5 stars! ⭐⭐⭐⭐⭐");
+            
         }
 
         // --- 10. DIGITAL SIGNATURE (TOUCH FIXED) ---
@@ -634,6 +652,8 @@
             // Simple check if canvas is empty could be done here, but let's just celebrate
             alert("CONTRACT SEALED! NO TAKEBACKS! ❤️💍"); 
             confetti({ particleCount: 200, spread: 180 });
+            notify("CONTRACT SIGNED! 📜");
+            
         }
 
         // --- 11. SMART "NO" BUTTON DODGE ---
@@ -663,6 +683,8 @@
             // Sequential alerts for drama
             setTimeout(() => alert("I KNEW IT! 😎"), 100);
             setTimeout(() => alert("I LOVE YOU SWARA! ❤️"), 1000);
+            notify("💍 SHE SAID YES!!!! 💍");
+            
         }
 
         // --- 13. GLOBAL KISS EFFECT ---
