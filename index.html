@@ -3,205 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jay ❤️ Swara | Cuteness Overload</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Handlee&display=swap" rel="stylesheet">
+    <title>Celebrating Jay & Swara's Friendship</title>
     <style>
-        * { -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; user-select: none; outline: none; }
-        body { background-color: #fff5f7; font-family: 'Handlee', cursive; overflow-x: hidden; color: #d63384; scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Pacifico', cursive; color: #ff4d94; text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.5); }
-        
-        /* FLOATING CUTENESS */
-        .floating { animation: floating 3s ease-in-out infinite; }
-        @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-        
-        .heart { position: fixed; color: #ff69b4; pointer-events: none; z-index: 1000; animation: fadeOutUp 1s forwards; font-size: 24px; }
-        @keyframes fadeOutUp { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-50px); } }
-        
-        #no-btn { transition: all 0.1s ease-out; position: relative; touch-action: none; z-index: 50; }
-        
-        /* ORIGINAL STYLES (UNTOUCHED) */
-        .custom-card { border-radius: 25px; box-shadow: 0 10px 25px rgba(255, 182, 193, 0.4); background: white; margin: 15px; padding: 25px; border: 3px solid #ffdae0; position: relative; z-index: 10; }
-        .polaroid { background: white; padding: 10px 10px 25px 10px; box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3); transform: rotate(-3deg); transition: all 0.3s; border: 1px solid #ffdae0; }
-        .polaroid:nth-child(even) { transform: rotate(3deg); }
-        
-        .timeline-line { position: absolute; left: 20px; top: 0; bottom: 0; width: 4px; background: #ffc1cc; z-index: -1; }
-        #videoElement { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; transform: scaleX(-1); border: 5px solid #ff4d94; }
-        .mirror-frame { border: 12px solid #ffb6c1; border-style: double; box-shadow: 0 0 30px #ffc1cc; border-radius: 40px; background: white; }
-        
-        /* NEW CUTENESS ELEMENTS */
-        .falling-element { position: fixed; top: -50px; pointer-events: none; z-index: 999; animation: fall linear forwards; }
-        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
-        
-        .kitty-doodle { position: absolute; pointer-events: none; opacity: 0.6; z-index: 0; }
-        .glow-btn { box-shadow: 0 0 15px rgba(255, 77, 148, 0.4); border: 2px solid white; }
+        body { font-family: Arial, sans-serif; background-color: #f0e68c; color: #333; text-align: center; }
+        h1 { color: #ff69b4; }
+        .emoji { font-size: 50px; }
+        footer { position: fixed; bottom: 10px; width: 100%; }
     </style>
 </head>
-<body onload="startCuteness()">
+<body>
+    <h1>🎉 Celebrating Jay & Swara's 2-Year Friendship! 🎉</h1>
+    <p>🍀 Happy Anniversary, Jay and Swara! 🍀</p>
+    <p>In the past 2 years, we’ve shared:</p>
+    <ul>
+        <li>🌙 Late night talks</li>
+        <li>📸 Captured memories</li>
+        <li>❤️ A journey filled with love and happiness</li>
+    </ul>
+    <h2>Our Cute Moments</h2>
+    <p>Here are some doodles to remember our cute moments together:</p>
+    <div>
+        <canvas id="doodleCanvas" width="500" height="300" style="border:1px solid #000000;"></canvas>
+        <button onclick="startDrawing()">Draw with me!</button>
+    </div>
 
-    <section class="h-screen flex flex-col items-center justify-center text-center p-6 bg-gradient-to-b from-pink-100 to-white relative">
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Hello_kitty_character_portrait.png" class="kitty-doodle w-32 top-10 left-5 floating" alt="Kitty">
-        <img src="https://pngimg.com/d/hello_kitty_PNG10.png" class="kitty-doodle w-24 bottom-20 right-5 floating" style="animation-delay: 1s;" alt="Kitty">
-        
-        <div class="animate__animated animate__bounceIn z-10">
-            <h1 class="text-6xl md:text-8xl font-bold text-pink-600">Jay ❤️ Swara</h1>
-            <p class="mt-4 text-xl md:text-2xl text-pink-400 italic font-bold">"Celebrating 2 Years of Pure Wholesome Chaos" 🫠</p>
-            <div class="text-8xl mt-8 floating drop-shadow-xl">🎀🧸🌸</div>
-        </div>
+    <h2>Our Past Fight Story</h2>
+    <p>हर रिश्ते में झगड़े होते हैं, लेकिन यही हमें मजबूत बनाता है।  
+    One time, we had a major disagreement over whose choice of movie to watch! 😅  
+    But we made up with ice-cream and laughter. 🍦</p>
 
-        <div class="mt-20 animate__animated animate__pulse animate__infinite text-pink-500 font-black z-10">
-            <p class="tracking-widest">Ready Swara? Scroll down!</p>
-            <span class="text-4xl">↓↓↓</span>
-        </div>
-    </section>
-
-    <section class="p-8 text-center bg-white relative">
-        <h2 class="text-3xl mb-8 text-pink-600 font-bold">The Magical Mirror 🪞</h2>
-        <div class="custom-card max-w-sm mx-auto overflow-hidden mirror-frame relative h-80 flex items-center justify-center bg-pink-50 shadow-inner">
-            <video id="videoElement" autoplay playsinline class="hidden"></video>
-            <div id="mirrorPlaceholder" class="text-pink-400 font-bold text-lg px-6">Tap to see Jay's Favorite Person! 🎀</div>
-        </div>
-        <button onclick="startMirror()" class="mt-8 bg-pink-500 text-white px-10 py-4 rounded-full font-bold shadow-xl glow-btn text-lg">Open Mirror ✨</button>
-    </section>
-
-    <section class="p-8 text-center bg-[#fff5f7]">
-        <h2 class="text-3xl mb-6 text-pink-600 font-bold">Chaos Level Meter ⚡</h2>
-        <div class="custom-card max-w-md mx-auto">
-            <div class="w-full bg-pink-50 rounded-full h-10 border-4 border-white shadow-inner relative overflow-hidden">
-                <div id="chaosBar" class="bg-gradient-to-r from-pink-400 via-red-400 to-pink-600 h-full transition-all duration-[4000ms]" style="width: 0%"></div>
-                <div class="absolute inset-0 flex items-center justify-center text-white font-black drop-shadow-md" id="chaosPercent">0%</div>
-            </div>
-            <button onclick="measureChaos()" id="chaosBtn" class="mt-6 bg-pink-500 text-white px-8 py-2 rounded-full font-bold shadow-lg">Calculate Madness</button>
-        </div>
-    </section>
-
-    <section class="py-12 px-6 text-center bg-white relative overflow-hidden">
-        <img src="https://pngimg.com/d/hello_kitty_PNG33.png" class="w-16 absolute -left-4 top-10 rotate-[-20deg]" alt="Bow">
-        <h2 class="text-3xl mb-6 text-pink-600 font-bold">Jay's Compliment Machine 🎰</h2>
-        <div class="relative" style="background: #ff4d94; border: 10px solid #ffd700; border-radius: 30px; padding: 25px; display: inline-block; box-shadow: 0 15px 0px #d63384;">
-            <div id="slotWindow" style="background: white; height: 90px; width: 230px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; color: #ff4d94; border: 4px solid #ffdae0;">SWARA</div>
-        </div>
-        <div class="mt-10"><button onclick="spinSlot()" class="bg-yellow-400 text-pink-800 px-10 py-3 rounded-full font-black shadow-lg glow-btn active:scale-95 transition">SPIN! 🍭</button></div>
-    </section>
-
-    <section class="py-12 px-6 bg-pink-50">
-        <h2 class="text-3xl text-center mb-10 text-pink-600 font-bold uppercase tracking-widest">Memory Wall 📸</h2>
-        <div class="grid grid-cols-2 gap-6 max-w-sm mx-auto">
-            <div class="polaroid"><div class="bg-pink-100 h-24 flex items-center justify-center text-4xl rounded">🍦</div><p class="text-center text-[10px] mt-2 font-bold uppercase">Ice Cream</p></div>
-            <div class="polaroid"><div class="bg-blue-100 h-24 flex items-center justify-center text-4xl rounded">🦉</div><p class="text-center text-[10px] mt-2 font-bold uppercase">3 AM Talks</p></div>
-            <div class="polaroid"><div class="bg-yellow-100 h-24 flex items-center justify-center text-4xl rounded">🥊</div><p class="text-center text-[10px] mt-2 font-bold uppercase">Fights</p></div>
-            <div class="polaroid"><div class="bg-green-100 h-24 flex items-center justify-center text-4xl rounded">💖</div><p class="text-center text-[10px] mt-2 font-bold uppercase">Forever</p></div>
-        </div>
-    </section>
-
-    <section class="p-8 bg-white">
-        <h2 class="text-4xl text-center mb-10 text-pink-600 font-bold italic">The Cutie Quiz 🧐</h2>
-        <div class="custom-card bg-blue-50 mb-6 border-blue-200"><p class="font-black mb-4 italic text-lg text-blue-700">1. Sabse bada bhukkad kaun hai? 🍕</p><div class="flex space-x-4 justify-center"><button onclick="alert('Liar! Sabko pata hai tum hi ho 😂')" class="bg-white border-2 border-blue-300 px-6 py-2 rounded-2xl font-bold shadow-sm">Swara</button><button onclick="alert('Haan haan, hamesha mujhe hi phasao! 🙄')" class="bg-white border-2 border-blue-300 px-6 py-2 rounded-2xl font-bold shadow-sm">Jay</button></div></div>
-        <div class="custom-card bg-pink-50 mb-6 border-pink-200"><p class="font-black mb-4 italic text-lg text-pink-700">2. Zyada Dramebaaz kaun hai? 🎭</p><div class="flex space-x-4 justify-center"><button onclick="alert('The Oscar goes to Swara! 🏆')" class="bg-white border-2 border-pink-300 px-6 py-2 rounded-2xl font-bold shadow-sm">Swara</button><button onclick="alert('Jay toh ekdum sharif hai! 😇')" class="bg-white border-2 border-pink-300 px-6 py-2 rounded-2xl font-bold shadow-sm">Jay</button></div></div>
-        <div class="custom-card bg-yellow-50 border-yellow-200"><p class="font-black mb-4 italic text-lg text-yellow-700">3. Sabse zyada gussa kisse aata hai? 😤</p><div class="flex space-x-4 justify-center"><button onclick="alert('Nazar utaro, gusse wali princess! 🧿')" class="bg-white border-2 border-yellow-300 px-6 py-2 rounded-2xl font-bold shadow-sm">Swara</button><button onclick="alert('Main toh bas sun leta hoon... 😶')" class="bg-white border-2 border-yellow-300 px-6 py-2 rounded-2xl font-bold shadow-sm">Jay</button></div></div>
-    </section>
-
-    <section class="py-12 px-8 relative bg-[#fffafb]">
-        <h2 class="text-3xl font-bold text-center mb-12 text-pink-600">Our Journey 🛤️</h2>
-        <div class="relative max-w-md mx-auto">
-            <div class="timeline-line"></div>
-            <div class="mb-10 ml-10 relative"><div class="absolute -left-[30px] w-6 h-6 bg-pink-500 rounded-full border-4 border-white shadow-lg"></div><h3 class="font-bold text-pink-700 text-xl">The Beginning 🚀</h3><p class="text-sm text-gray-600 italic">Pata nahi tha ki destiny ne kya plan kiya hai. Cute start!</p></div>
-            <div class="mb-10 ml-10 relative"><div class="absolute -left-[30px] w-6 h-6 bg-blue-500 rounded-full border-4 border-white shadow-lg"></div><h3 class="font-bold text-blue-700 text-xl">The First Big Fight 🥊</h3><p class="text-sm text-gray-600 italic">Jab humne bola tha kabhi baat nahi karenge. Spoiler: Hum nahi reh paye.</p></div>
-            <div class="mb-10 ml-10 relative"><div class="absolute -left-[30px] w-6 h-6 bg-yellow-500 rounded-full border-4 border-white shadow-lg"></div><h3 class="font-bold text-yellow-700 text-xl">The 3 AM Club 🦉</h3><p class="text-sm text-gray-600 italic">Neend ud gayi par baatein nahi. Best deep talks ever.</p></div>
-            <div class="ml-10 relative"><div class="absolute -left-[30px] w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg"></div><h3 class="font-bold text-green-700 text-xl">Forever Era ♾️</h3><p class="text-sm text-gray-600 italic">2 saal ho gaye, ab tum stuck ho mere saath!</p></div>
-        </div>
-    </section>
-
-    <section class="h-screen flex flex-col items-center justify-center bg-red-50 p-6 relative overflow-hidden">
-        <img src="https://pngimg.com/d/hello_kitty_PNG9.png" class="kitty-doodle w-32 top-0 right-0 opacity-50" alt="Kitty">
-        <h2 class="text-4xl font-bold text-center mb-12 text-red-600 drop-shadow-sm">Swara, final sawal... do you love me? ❤️</h2>
-        <div class="flex flex-col space-y-6 items-center w-full">
-            <button onclick="handleYesClick()" class="bg-green-500 text-white px-24 py-6 rounded-full font-black shadow-2xl text-3xl z-20 glow-btn animate__animated animate__pulse animate__infinite">YES!</button>
-            <button id="no-btn" onmouseover="moveButton()" onclick="moveButton()" ontouchstart="moveButton()" class="bg-red-400 text-white px-12 py-3 rounded-full font-bold shadow-lg z-20 opacity-80">Never 😜</button>
-        </div>
-    </section>
-
-    <footer class="p-12 bg-pink-600 text-white text-center">
-        <p class="text-2xl italic font-bold mb-2 tracking-widest">Happy Valentine's, Swara! 🎀</p>
-        <p class="text-xs opacity-80 tracking-widest uppercase font-bold">— Always Yours, Jay —</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script>
-        // CUTENESS BOOSTER
-        function startCuteness() {
-            for(let i=0; i<20; i++) {
-                setTimeout(createFallingElement, i * 300);
+        let canvas = document.getElementById('doodleCanvas');
+        let ctx = canvas.getContext('2d');
+        let drawing = false;
+
+        function startDrawing() {
+            drawing = true;
+            ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+        }
+
+        canvas.addEventListener('mousemove', (event) => {
+            if(drawing){
+                ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+                ctx.stroke();
             }
-        }
-        function createFallingElement() {
-            const el = document.createElement('div');
-            el.innerHTML = ['🌸', '✨', '💖', '🎀', '🎀'][Math.floor(Math.random()*5)];
-            el.className = 'falling-element';
-            el.style.left = Math.random() * 100 + 'vw';
-            el.style.fontSize = (Math.random() * 20 + 20) + 'px';
-            el.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            document.body.appendChild(el);
-            setTimeout(() => el.remove(), 5000);
-        }
-
-        async function startMirror() {
-            const video = document.getElementById('videoElement');
-            const placeholder = document.getElementById('mirrorPlaceholder');
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-                video.srcObject = stream; video.classList.remove('hidden'); placeholder.classList.add('hidden');
-                confetti({ particleCount: 150, spread: 70, colors: ['#ff4d94', '#ffffff'] });
-            } catch (err) { alert("Please allow camera access for the cute surprise! 🎀"); }
-        }
-
-        const compliments = ["BESTIE ❤️", "DRMA QUEEN 🎭", "CUTIE 🐥", "BHUKKAD 🍕", "PARTNER ♾️", "BHONDU 🫠"];
-        function spinSlot() {
-            const win = document.getElementById('slotWindow');
-            let count = 0;
-            const interval = setInterval(() => {
-                win.innerText = compliments[Math.floor(Math.random() * compliments.length)];
-                count++;
-                if (count > 25) { 
-                    clearInterval(interval); 
-                    win.innerText = compliments[Math.floor(Math.random() * compliments.length)]; 
-                    confetti({ particleCount: 100, scalar: 1.2 }); 
-                }
-            }, 50);
-        }
-
-        function measureChaos() {
-            const bar = document.getElementById('chaosBar');
-            const txt = document.getElementById('chaosPercent');
-            const btn = document.getElementById('chaosBtn');
-            btn.style.display = 'none'; bar.style.width = '100%';
-            let p = 0;
-            const interval = setInterval(() => {
-                p += 5; txt.innerText = p + '%';
-                if(p >= 100) { clearInterval(interval); txt.innerText = 'MAX CHAOS! 🔥'; confetti({ particleCount: 200, spread: 100 }); }
-            }, 100);
-        }
-
-        document.addEventListener('click', (e) => {
-            const heart = document.createElement('div');
-            heart.innerHTML = '💖'; heart.className = 'heart';
-            heart.style.left = (e.clientX - 10) + 'px'; heart.style.top = (e.clientY - 10) + 'px';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 1000);
         });
 
-        function moveButton() {
-            const btn = document.getElementById('no-btn'); btn.style.position = 'fixed';
-            const randomX = Math.random() * (window.innerWidth - btn.offsetWidth);
-            const randomY = Math.random() * (window.innerHeight - btn.offsetHeight);
-            btn.style.left = randomX + 'px'; btn.style.top = randomY + 'px';
-        }
-
-        function handleYesClick() {
-            confetti({ particleCount: 500, spread: 150, origin: { y: 0.6 } });
-            alert("YAYYY! ❤️ Swara, party pending hai! 🍫🎉");
-        }
+        canvas.addEventListener('mouseup', () => { drawing = false; });
+        canvas.addEventListener('mouseout', () => { drawing = false; });
     </script>
+
+    <footer>
+        <p>Thank you for sharing this beautiful journey with me! 💖</p>
+        <p>~ Jay & Swara ~</p>
+    </footer>
 </body>
 </html>
