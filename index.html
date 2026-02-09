@@ -206,6 +206,43 @@ font-size:14px !important;
   .chat{
 height:350px !important;
   }
+  /* ===== MOBILE PERFECT FIX ===== */
+@media (max-width: 768px){
+
+body{
+flex-direction: column;
+}
+
+.sidebar{
+width: 100%;
+flex-direction: row;
+overflow-x: auto;
+gap:8px;
+padding:10px;
+}
+
+.menu{
+flex: 1;
+font-size: 12px;
+padding:10px;
+white-space: nowrap;
+}
+
+.main{
+padding:14px;
+}
+
+.card{
+border-radius:18px;
+padding:16px;
+margin-bottom:14px;
+}
+
+.chat{
+height: 55vh;
+}
+
+}
 </style>
 </head>
 
