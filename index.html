@@ -20,29 +20,36 @@ body{
 background:linear-gradient(135deg,#ffe9f3,#e9f7ff,#fff6dc,#f2ecff);
 min-height:100vh;
 display:flex;
+flex-direction:column;
 color:#444;
 overflow-x:hidden;
 }
 
 /* ===== SIDEBAR ===== */
 .sidebar{
-width:230px;
+width:100%;
 background:#ffffffcc;
 backdrop-filter:blur(8px);
-padding:20px;
-box-shadow:0 0 25px rgba(0,0,0,.07);
+padding:12px;
 display:flex;
-flex-direction:column;
+flex-wrap:wrap;
+justify-content:center;
 gap:10px;
+box-shadow:0 6px 18px rgba(0,0,0,.06);
+position:sticky;
+top:0;
+z-index:100;
 }
 
 .menu{
-padding:12px;
+padding:10px 14px;
 border-radius:14px;
 cursor:pointer;
 font-weight:800;
 text-align:center;
 transition:.2s;
+background:#fff;
+flex: 1 1 120px;
 }
 
 .menu:hover{
