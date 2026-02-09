@@ -1,495 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Official Timepass Partners Association</title>
-
-<style>
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-font-family:Poppins, sans-serif;
-}
-html, body {
-width: 100%;
-max-width: 100%;
-}
-body{
-  background: linear-gradient(135deg,#ffe9f3,#e9f7ff,#fff6dc,#f2ecff);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column; /* ensures topbar, main content below */
-  color: #444;
-  overflow-x: hidden;
-}
-
-/* ===== SIDEBAR ===== */
-.sidebar{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;          /* buttons wrap nicely */
-  justify-content: center;  /* center aligned */
-  gap: 10px;
-  padding: 12px;
-  background: #ffffffcc;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 6px 18px rgba(0,0,0,.06);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.menu{
-  background: #fff;
-  padding: 12px 14px;
-  border-radius: 14px;
-  cursor: pointer;
-  font-weight: 800;
-  text-align: center;
-  transition: .2s;
-  flex: 1 1 120px;   /* flexible width */
-  min-width: 90px;    /* prevents shrinking too small */
-  white-space: nowrap; /* keep emojis/text in one line */
-}
-
-.menu:hover{
-background:#ffd6ea;
-transform:scale(1.05);
-}
-
-/* ===== MAIN ===== */
-.main{
-flex:1;
-padding:30px;
-overflow:auto;
-}
-
-.section{ display:none; }
-.active{ display:block; }
-
-/* ===== CARD ===== */
-.card{
-background:white;
-padding:25px;
-border-radius:25px;
-box-shadow:0 12px 25px rgba(0,0,0,.07);
-margin-bottom:25px;
-text-align:center;
-}
-
-/* ===== BUTTON ===== */
-.btn{
-background:#ffe0f0;
-border:none;
-padding:10px 18px;
-border-radius:25px;
-cursor:pointer;
-font-weight:800;
-margin:5px;
-transition:.25s;
-}
-
-.btn:hover{
-background:#ffb3da;
-transform:scale(1.08);
-}
-
-/* ===== CHAT (BUG FREE + CUTE) ===== */
-.chat{
-height:320px;
-overflow-y:auto;
-background:linear-gradient(180deg,#fff,#f8f8ff);
-border-radius:20px;
-padding:12px;
-display:flex;
-flex-direction:column;
-gap:8px;
-scroll-behavior:smooth;
-}
-
-/* bubbles */
-.bubble{
-max-width:70%;
-padding:10px 14px;
-border-radius:18px;
-font-size:14px;
-font-weight:700;
-word-wrap:break-word;
-animation:pop .15s ease;
-}
-
-.jay{
-align-self:flex-end;
-background:#d8ecff;
-border-bottom-right-radius:6px;
-}
-
-.swara{
-align-self:flex-start;
-background:#ffe1f0;
-border-bottom-left-radius:6px;
-}
-
-.time{
-font-size:10px;
-opacity:.5;
-margin-top:2px;
-}
-
-@keyframes pop{
-from{transform:scale(.85);opacity:0}
-to{transform:scale(1);opacity:1}
-}
-
-/* ===== BAR ===== */
-.bar{
-width:100%;
-height:18px;
-background:#eee;
-border-radius:20px;
-margin-top:10px;
-}
-
-.fill{
-height:100%;
-width:0%;
-background:#ffb3d1;
-border-radius:20px;
-transition:.3s;
-}
-
-/* ===== CERT ===== */
-.cert{
-font-weight:900;
-font-size:20px;
-border:3px dashed #ffb3d1;
-padding:20px;
-border-radius:18px;
-}
-
-/* ===== EMOJI RAIN ===== */
-.emoji{
-position:fixed;
-top:-20px;
-font-size:24px;
-animation:fall 3s linear forwards;
-pointer-events:none;
-}
-button, .btn, .menu {
-outline: none;
--webkit-tap-highlight-color: transparent;
-}
-
-button:focus, .btn:focus, .menu:focus {
-outline: none;
-box-shadow: none;
-}
-  button, .btn, .menu {
-user-select: none;
-  }
-  
-@keyframes fall{
-to{transform:translateY(100vh);opacity:0}
-}
-  /* mobile spacing fix */
-.main{
-padding:18px !important;
-}
-
-.card{
-margin-bottom:18px !important;
-padding:20px !important;
-}
-
-.sidebar{
-width:180px !important;
-gap:14px !important;
-}
-
-.menu{
-padding:14px !important;
-font-size:14px !important;
-}
-  .chat{
-height:350px !important;
-  }
-  /* ===== MOBILE PERFECT FIX ===== */
-
-.sidebar{
-width: 100%;
-flex-direction: row;
-overflow-x: auto;
-gap:8px;
-padding:10px;
-}
-
-.menu{
-flex: 1;
-font-size: 12px;
-padding:10px;
-white-space: nowrap;
-}
-
-.main{
-padding:14px;
-}
-
-.card{
-border-radius:18px;
-padding:16px;
-margin-bottom:14px;
-}
-
-.chat{
-height: 55vh;
-}
-@media (max-width: 480px){
-  .menu{
-    flex: 1 1 45%;  /* 2 buttons per row on tiny screens */
-  }
-  .main{
-    padding: 14px;
-  }
-  .card{
-    padding: 16px;
-    margin-bottom: 14px;
-  }
-  .chat{
-    height: 55vh;
-  }
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay ❤️ Swara | The Ultimate Chaos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Handlee&display=swap" rel="stylesheet">
+    <style>
+        * { -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; user-select: none; outline: none; }
+        body { background-color: #fffaf0; font-family: 'Handlee', cursive; overflow-x: hidden; color: #4a4a4a; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Pacifico', cursive; color: #e91e63; }
+        .floating { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        .heart { position: fixed; color: #ff4d4d; pointer-events: none; z-index: 1000; animation: fadeOutUp 1s forwards; font-size: 24px; }
+        @keyframes fadeOutUp { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-50px); } }
+        #no-btn { transition: all 0.1s ease-out; position: relative; touch-action: none; z-index: 50; }
+        .custom-card { border-radius: 20px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); background: white; margin: 15px; padding: 20px; border: 2px solid #fee2e2; }
+        .polaroid { background: white; padding: 10px 10px 25px 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transform: rotate(-3deg); transition: all 0.3s; }
+        .polaroid:nth-child(even) { transform: rotate(3deg); }
+        .polaroid:hover { transform: rotate(0deg) scale(1.05); z-index: 10; }
+        .timeline-line { position: absolute; left: 20px; top: 0; bottom: 0; width: 4px; background: #fbcfe8; z-index: -1; }
+        
+        /* MIRROR EFFECT */
+        #videoElement { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; transform: scaleX(-1); }
+        .mirror-frame { border: 10px solid #fbcfe8; border-style: double; box-shadow: 0 0 20px pink; }
+    </style>
 </head>
-
 <body>
 
-<div class="sidebar">
-<div class="menu" onclick="show('home')">🏠✨ Home</div>
-<div class="menu" onclick="show('chat')">💬💖 Chat</div>
-<div class="menu" onclick="show('actions')">🎮😜 Fun</div>
-<div class="menu" onclick="show('mood')">💗🌸 Mood</div>
-<div class="menu" onclick="show('certificate')">🏆💛 Certificate</div>
-</div>
+    <section class="h-screen flex flex-col items-center justify-center text-center p-6 bg-gradient-to-br from-pink-100 to-red-50">
+        <div class="animate__animated animate__bounceIn">
+            <h1 class="text-5xl md:text-7xl font-bold text-pink-600 drop-shadow-lg">Jay ❤️ Swara</h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-700 italic">"Celebrating 2 Years of Pure Wholesome Chaos" 🫠</p>
+            <div class="text-7xl md:text-8xl mt-8 floating text-shadow-xl">🐣✨💖</div>
+        </div>
+        <div class="mt-20 animate__animated animate__pulse animate__infinite text-pink-400 font-bold"><p>Ready Swara? Scroll down!</p><span class="text-3xl">↓↓↓</span></div>
+    </section>
 
+    <section class="p-8 text-center bg-white">
+        <h2 class="text-3xl mb-6 text-pink-600 font-bold">The Magical Mirror 🪞</h2>
+        <div class="custom-card max-w-sm mx-auto overflow-hidden mirror-frame relative h-80 flex items-center justify-center bg-gray-100">
+            <video id="videoElement" autoplay playsinline class="hidden"></video>
+            <div id="mirrorPlaceholder" class="text-pink-400 font-bold">Tap to see Jay's Favorite Person!</div>
+        </div>
+        <button onclick="startMirror()" class="mt-6 bg-pink-500 text-white px-8 py-3 rounded-full font-bold shadow-lg animate__animated animate__pulse animate__infinite">Open Mirror ✨</button>
+    </section>
 
-<div class="main">
+    <section class="p-8 text-center bg-pink-50">
+        <h2 class="text-3xl mb-6 text-pink-600 font-bold">Chaos Level Meter ⚡</h2>
+        <div class="custom-card max-w-md mx-auto">
+            <div class="w-full bg-gray-200 rounded-full h-8 border-2 border-pink-100 relative overflow-hidden">
+                <div id="chaosBar" class="bg-gradient-to-r from-pink-400 to-red-600 h-full transition-all duration-[4000ms]" style="width: 0%"></div>
+                <div class="absolute inset-0 flex items-center justify-center text-white font-black" id="chaosPercent">0%</div>
+            </div>
+            <button onclick="measureChaos()" id="chaosBtn" class="mt-6 bg-pink-500 text-white px-8 py-2 rounded-full font-bold shadow-lg">Calculate Madness</button>
+        </div>
+    </section>
 
-<!-- HOME -->
-<div id="home" class="section active">
-<div class="card">
-<h2><b>Official Timepass Partners Association 😎💛✨</b></h2>
-<p style="font-weight:800;margin-top:10px">
-Secret texting 📱 • Unlimited teasing 😜 • Care level high 💗 • Status loading since forever ⏳
-</p>
-</div>
+    <section class="py-12 px-6 text-center bg-white">
+        <h2 class="text-3xl mb-6 text-pink-600 font-bold">Jay's Compliment Machine 🎰</h2>
+        <div style="background: #e91e63; border: 8px solid #ffd700; border-radius: 20px; padding: 20px; display: inline-block;">
+            <div id="slotWindow" style="background: white; height: 80px; width: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; color: #e91e63;">SWARA</div>
+        </div>
+        <div class="mt-6"><button onclick="spinSlot()" class="bg-yellow-400 text-pink-700 px-8 py-3 rounded-full font-bold shadow-lg">SPIN! ✨</button></div>
+    </section>
 
-<div class="card">
-<h3><b>📅 Days Survived Together</b></h3>
-<h1 id="days"></h1>
-</div>
-</div>
+    <section class="py-12 px-6 bg-pink-50">
+        <h2 class="text-3xl text-center mb-10 text-pink-600 font-bold">Memory Wall 📸</h2>
+        <div class="grid grid-cols-2 gap-6 max-w-sm mx-auto">
+            <div class="polaroid"><div class="bg-pink-100 h-24 flex items-center justify-center text-4xl rounded">🍦</div><p class="text-center text-[10px] mt-2 font-bold uppercase">Ice Cream</p></div>
+            <div class="polaroid"><div class="bg-blue-100 h-24 flex items-center justify-center text-4xl rounded">🦉</div><p class="text-center text-[10px] mt-2 font-bold uppercase">3 AM Talks</p></div>
+            <div class="polaroid"><div class="bg-yellow-100 h-24 flex items-center justify-center text-4xl rounded">🥊</div><p class="text-center text-[10px] mt-2 font-bold uppercase">Fights</p></div>
+            <div class="polaroid"><div class="bg-green-100 h-24 flex items-center justify-center text-4xl rounded">💖</div><p class="text-center text-[10px] mt-2 font-bold uppercase">Forever</p></div>
+        </div>
+    </section>
 
+    <section class="p-8 bg-white">
+        <h2 class="text-3xl text-center mb-10 text-pink-600 font-bold">The Quiz 🧐</h2>
+        <div class="custom-card bg-blue-50 mb-6"><p class="font-bold mb-4 italic">1. Sabse bada bhukkad kaun hai? 🍕</p><div class="flex space-x-4 justify-center"><button onclick="alert('Liar! Sabko pata hai tum hi ho 😂')" class="bg-white px-5 py-2 rounded-xl">Swara</button><button onclick="alert('Haan haan, hamesha mujhe hi phasao! 🙄')" class="bg-white px-5 py-2 rounded-xl">Jay</button></div></div>
+        <div class="custom-card bg-pink-50 mb-6"><p class="font-bold mb-4 italic">2. Zyada Dramebaaz kaun hai? 🎭</p><div class="flex space-x-4 justify-center"><button onclick="alert('The Oscar goes to Swara! 🏆')" class="bg-white px-5 py-2 rounded-xl">Swara</button><button onclick="alert('Jay toh ekdum sharif hai! 😇')" class="bg-white px-5 py-2 rounded-xl">Jay</button></div></div>
+        <div class="custom-card bg-yellow-50"><p class="font-bold mb-4 italic">3. Sabse zyada gussa kisse aata hai? 😤</p><div class="flex space-x-4 justify-center"><button onclick="alert('Nazar utaro, gusse wali princess! 🧿')" class="bg-white px-5 py-2 rounded-xl">Swara</button><button onclick="alert('Main toh bas sun leta hoon... 😶')" class="bg-white px-5 py-2 rounded-xl">Jay</button></div></div>
+    </section>
 
-<!-- CHAT -->
-<div id="chat" class="section">
-<div class="card">
-<h2><b>💬 Secret Chat Simulator 🥺💌</b></h2>
+    <section class="py-12 px-8 relative bg-pink-50">
+        <h2 class="text-3xl font-bold text-center mb-12 text-pink-600">Our Journey 🛤️</h2>
+        <div class="relative max-w-md mx-auto">
+            <div class="timeline-line"></div>
+            <div class="mb-10 ml-10 relative"><div class="absolute -left-[30px] w-6 h-6 bg-pink-500 rounded-full border-4 border-white shadow"></div><h3 class="font-bold text-pink-700">The Beginning 🚀</h3><p class="text-sm text-gray-600 italic">Pata nahi tha ki destiny ne kya plan kiya hai. Cute start!</p></div>
+            <div class="mb-10 ml-10 relative"><div class="absolute -left-[30px] w-6 h-6 bg-blue-500 rounded-full border-4 border-white shadow"></div><h3 class="font-bold text-blue-700">The First Big Fight 🥊</h3><p class="text-sm text-gray-600 italic">Jab humne bola tha kabhi baat nahi karenge. Spoiler: Hum nahi reh paye.</p></div>
+            <div class="mb-10 ml-10 relative"><div class="absolute -left-[30px] w-6 h-6 bg-yellow-500 rounded-full border-4 border-white shadow"></div><h3 class="font-bold text-yellow-700">The 3 AM Club 🦉</h3><p class="text-sm text-gray-600 italic">Neend ud gayi par baatein nahi. Best deep talks ever.</p></div>
+            <div class="ml-10 relative"><div class="absolute -left-[30px] w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow"></div><h3 class="font-bold text-green-700">Forever Era ♾️</h3><p class="text-sm text-gray-600 italic">2 saal ho gaye, ab tum stuck ho mere saath!</p></div>
+        </div>
+    </section>
 
-<div class="chat" id="chatBox"></div>
+    <section class="h-screen flex flex-col items-center justify-center bg-red-50 p-6 relative overflow-hidden">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-red-700 drop-shadow-sm">Swara, final sawal... do you love me? ❤️</h2>
+        <div class="flex flex-col space-y-6 items-center w-full">
+            <button onclick="handleYesClick()" class="bg-green-500 text-white px-20 py-5 rounded-full font-bold shadow-2xl text-2xl z-20">YES!</button>
+            <button id="no-btn" onmouseover="moveButton()" onclick="moveButton()" ontouchstart="moveButton()" class="bg-red-500 text-white px-10 py-3 rounded-full font-bold shadow-lg z-20">Never 😜</button>
+        </div>
+    </section>
 
-<button class="btn" onclick="send()">Send Random Text 💬✨</button>
-</div>
-</div>
+    <footer class="p-12 bg-pink-900 text-white text-center">
+        <p class="text-xl italic font-bold mb-2">Happy Valentine's, Swara! ❤️</p>
+        <p class="text-xs opacity-60 tracking-widest uppercase">— Forever Jay —</p>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script>
+        // MAGIC MIRROR LOGIC
+        async function startMirror() {
+            const video = document.getElementById('videoElement');
+            const placeholder = document.getElementById('mirrorPlaceholder');
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+                video.classList.remove('hidden');
+                placeholder.classList.add('hidden');
+                confetti({ particleCount: 100, spread: 70 });
+            } catch (err) {
+                alert("Please allow camera access to see the magic! ✨");
+            }
+        }
 
-<!-- ACTIONS -->
-<div id="actions" class="section">
-<div class="card">
-<h2><b>🎮 Teasing Console 😜🌸</b></h2>
+        // SLOT MACHINE
+        const compliments = ["BESTIE ❤️", "DRMA QUEEN 🎭", "CUTIE 🐥", "BHUKKAD 🍕", "PARTNER ♾️", "BHONDU 🫠"];
+        function spinSlot() {
+            const win = document.getElementById('slotWindow');
+            let count = 0;
+            const interval = setInterval(() => {
+                win.innerText = compliments[Math.floor(Math.random() * compliments.length)];
+                count++;
+                if (count > 20) {
+                    clearInterval(interval);
+                    win.innerText = compliments[Math.floor(Math.random() * compliments.length)];
+                    confetti({ particleCount: 50, spread: 60 });
+                }
+            }, 50);
+        }
 
-<button class="btn" onclick="rand(msgs)">Message 📩</button>
-<button class="btn" onclick="rand(roasts)">Annoy Jay 😂</button>
-<button class="btn" onclick="rand(care)">Care 💛</button>
-<button class="btn" onclick="emojiRain()">Sticker Rain 🎉✨</button>
+        // CHAOS METER
+        function measureChaos() {
+            const bar = document.getElementById('chaosBar');
+            const txt = document.getElementById('chaosPercent');
+            const btn = document.getElementById('chaosBtn');
+            btn.style.display = 'none'; bar.style.width = '100%';
+            let p = 0;
+            const interval = setInterval(() => {
+                p += 5; txt.innerText = p + '%';
+                if(p >= 100) { clearInterval(interval); txt.innerText = 'MAX CHAOS! 🔥'; }
+            }, 100);
+        }
 
-<div id="out" style="margin-top:15px;font-weight:900"></div>
-</div>
-</div>
+        document.addEventListener('click', (e) => {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️'; heart.className = 'heart';
+            heart.style.left = (e.clientX - 10) + 'px'; heart.style.top = (e.clientY - 10) + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1000);
+        });
 
+        function moveButton() {
+            const btn = document.getElementById('no-btn'); btn.style.position = 'fixed';
+            const padding = 60;
+            const randomX = Math.max(padding, Math.floor(Math.random() * (window.innerWidth - btn.offsetWidth - padding)));
+            const randomY = Math.max(padding, Math.floor(Math.random() * (window.innerHeight - btn.offsetHeight - padding)));
+            btn.style.left = randomX + 'px'; btn.style.top = randomY + 'px';
+        }
 
-<!-- MOOD -->
-<div id="mood" class="section">
-<div class="card">
-<h2><b>💗 Mood Radar 🌸</b></h2>
-
-<select id="moodSel" class="btn">
-<option>Happy 😊✨</option>
-<option>Angry 😤⚡</option>
-<option>Sleepy 😴🌙</option>
-<option>Sad 😔💛</option>
-<option>Drama 🎭😂</option>
-<option>Ignore Mode 🙄📵</option>
-</select>
-
-<button class="btn" onclick="checkMood()">Check 💌</button>
-
-<div id="moodText" style="margin-top:15px;font-weight:900"></div>
-
-<div class="bar">
-<div class="fill" id="careFill"></div>
-</div>
-</div>
-</div>
-
-
-<!-- CERT -->
-<div id="certificate" class="section">
-<div class="card cert">
-Jay 🤝 Swara 💛  
-<br><br>
-Certified Timepass Legends 😎✨  
-<br>
-2 Years of Secret Chats 📱😂💌🌸
-</div>
-</div>
-
-</div>
-
-<script>
-
-/* navigation */
-function show(id){
-document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-}
-
-/* days */
-const start=new Date("2024-02-08");
-days.innerText=Math.floor((Date.now()-start)/(1000*60*60*24))+" days 💛✨";
-
-/* ===== CHAT FIXED ===== */
-
-/* ===== CHAT SYSTEM FIXED (ORDERED, NO RANDOM, NO BUG) ===== */
-
-const conversation = [
-"Where are youuu 😤",
-"Nothing… just timepass 😌",
-"Stop teasing idiot 😂",
-"Ok finee 😜",
-"Send notes plzzz 🥺",
-"Already sent check 😎",
-"Thanks dummy 💛",
-"Shut up Jay 😂",
-"Sleep early ok 😴",
-"Goodnight 🌙✨"
-];
-
-let chatIndex = 0;
-let turn = 0;
-let lock = false;
-
-function send(){
-
-if(lock) return;
-lock = true;
-
-const text = conversation[chatIndex];
-
-const bubble = document.createElement("div");
-bubble.className = "bubble " + (turn%2 ? "jay" : "swara");
-
-bubble.innerHTML =
-text +
-"<div class='time'>" +
-new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) +
-"</div>";
-
-chatBox.appendChild(bubble);
-
-chatBox.scrollTop = chatBox.scrollHeight;
-
-turn++;
-chatIndex++;
-
-if(chatIndex >= conversation.length){
-chatIndex = 0;   // clean loop
-}
-
-setTimeout(()=> lock=false, 150);
-}
-
-/* actions */
-const msgs=["Ping sent 📩✨","Miss call spam 😂📞","Typing... but not sending 😈"];
-const roasts=["Jay.exe stopped working 🤖","Drama king 😂","Certified pagal 🥴"];
-const care=["Drink water 🥤💛","Sleep early 😴","Take care idiot 💌"];
-
-function rand(arr){
-out.innerText=arr[Math.floor(Math.random()*arr.length)];
-}
-
-/* emoji rain */
-const emojis=["💛","✨","🌸","😜","😂","🥺","💌","💫","🎉","🫶","🌈","🍫","🌟","💕"];
-
-function emojiRain(){
-for(let i=0;i<35;i++){
-const e=document.createElement('div');
-e.className="emoji";
-e.innerText=emojis[Math.floor(Math.random()*emojis.length)];
-e.style.left=Math.random()*100+"vw";
-e.style.animationDuration=(2+Math.random()*2)+"s";
-document.body.appendChild(e);
-setTimeout(()=>e.remove(),3000);
-}
-}
-
-/* mood */
-/* ===== SMART MOOD RADAR (REAL REACTIONS) ===== */
-
-function checkMood(){
-
-const mood = moodSel.value;
-
-let text = "";
-let level = 0;
-
-if(mood.includes("Happy")){
-text = "Happy detected 😄 Teasing allowed 😜✨";
-level = 40;
-emojiRain();
-}
-
-else if(mood.includes("Angry")){
-text = "Danger zone 🚨 Send chocolate immediately 🍫😂";
-level = 85;
-}
-
-else if(mood.includes("Sleepy")){
-text = "Say goodnight softly 😴🌙 Don't disturb mode";
-level = 30;
-}
-
-else if(mood.includes("Sad")){
-text = "Stay with her. No jokes today 💛🥺";
-level = 100;
-emojiRain();
-}
-
-else if(mood.includes("Drama")){
-text = "Popcorn ready 🍿 Full episode starting 😂";
-level = 65;
-}
-
-else{
-text = "Ignore mode on 🙄 Double texting recommended 📱😂";
-level = 75;
-}
-
-careFill.style.width = level + "%";
-moodText.innerText = text;
-}
-
-</script>
+        function handleYesClick() {
+            confetti({ particleCount: 300, spread: 100 });
+            alert("YAYYY! ❤️ Swara, party pending hai! 🍫🎉");
+        }
+    </script>
 </body>
 </html>
